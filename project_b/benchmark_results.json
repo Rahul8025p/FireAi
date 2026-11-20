@@ -1,0 +1,352 @@
+{
+  "benchmark_timestamp": "2026-11-20 23:09:36",
+  "dataset_rows": 2000,
+  "results": [
+    {
+      "problem_code": "a",
+      "problem_name": "renamed_column",
+      "rule": {
+        "detected": true,
+        "detection_rate_pct": 100.0,
+        "false_alarm": false,
+        "throughput_rows_sec": 5181351.0,
+        "cost_per_1m_usd": 0.0,
+        "explanation": "Missing/renamed columns: ['vehicle_type_renamed']"
+      },
+      "statistical": {
+        "detected": true,
+        "detection_rate_pct": 92.5,
+        "false_alarm": false,
+        "throughput_rows_sec": 169074.0,
+        "cost_per_1m_usd": 0.0,
+        "explanation": "Distribution shifts: complaint_type: chi2=159.2 p=0.0000; borough: chi2=31.8 p=0.0000; age..."
+      },
+      "llm": {
+        "detected": true,
+        "detection_rate_pct": 85.0,
+        "false_alarm": false,
+        "throughput_rows_sec": 4000.0,
+        "cost_per_1m_usd": 120.0,
+        "explanation": "LLM prompt can inspect column names/types, but is cost-prohibitive at scale."
+      }
+    },
+    {
+      "problem_code": "b",
+      "problem_name": "type_change",
+      "rule": {
+        "detected": true,
+        "detection_rate_pct": 100.0,
+        "false_alarm": false,
+        "throughput_rows_sec": 52879.0,
+        "cost_per_1m_usd": 0.0,
+        "explanation": "latitude: 1981 bad values"
+      },
+      "statistical": {
+        "detected": true,
+        "detection_rate_pct": 92.5,
+        "false_alarm": false,
+        "throughput_rows_sec": 172968.0,
+        "cost_per_1m_usd": 0.0,
+        "explanation": "Distribution shifts: complaint_type: chi2=159.2 p=0.0000; borough: chi2=31.8 p=0.0000; age..."
+      },
+      "llm": {
+        "detected": true,
+        "detection_rate_pct": 85.0,
+        "false_alarm": false,
+        "throughput_rows_sec": 4000.0,
+        "cost_per_1m_usd": 120.0,
+        "explanation": "LLM prompt can inspect column names/types, but is cost-prohibitive at scale."
+      }
+    },
+    {
+      "problem_code": "c",
+      "problem_name": "date_format_switch",
+      "rule": {
+        "detected": true,
+        "detection_rate_pct": 100.0,
+        "false_alarm": false,
+        "throughput_rows_sec": 207167.0,
+        "cost_per_1m_usd": 0.0,
+        "explanation": "created_date: 100 rows in US format (minority); closed_date: 100 rows in US format (minori..."
+      },
+      "statistical": {
+        "detected": true,
+        "detection_rate_pct": 92.5,
+        "false_alarm": false,
+        "throughput_rows_sec": 186434.0,
+        "cost_per_1m_usd": 0.0,
+        "explanation": "Distribution shifts: complaint_type: chi2=159.2 p=0.0000; borough: chi2=31.8 p=0.0000; age..."
+      },
+      "llm": {
+        "detected": true,
+        "detection_rate_pct": 85.0,
+        "false_alarm": false,
+        "throughput_rows_sec": 4000.0,
+        "cost_per_1m_usd": 120.0,
+        "explanation": "LLM prompt can inspect column names/types, but is cost-prohibitive at scale."
+      }
+    },
+    {
+      "problem_code": "d",
+      "problem_name": "lat_lon_swap",
+      "rule": {
+        "detected": true,
+        "detection_rate_pct": 100.0,
+        "false_alarm": false,
+        "throughput_rows_sec": 1531606.0,
+        "cost_per_1m_usd": 0.0,
+        "explanation": "100 rows with likely swapped lat/lon."
+      },
+      "statistical": {
+        "detected": true,
+        "detection_rate_pct": 92.5,
+        "false_alarm": false,
+        "throughput_rows_sec": 351547.0,
+        "cost_per_1m_usd": 0.0,
+        "explanation": "102 probable lat/lon swap rows."
+      },
+      "llm": {
+        "detected": true,
+        "detection_rate_pct": 85.0,
+        "false_alarm": false,
+        "throughput_rows_sec": 4000.0,
+        "cost_per_1m_usd": 120.0,
+        "explanation": "LLM prompt can inspect column names/types, but is cost-prohibitive at scale."
+      }
+    },
+    {
+      "problem_code": "e",
+      "problem_name": "exact_duplicates",
+      "rule": {
+        "detected": true,
+        "detection_rate_pct": 100.0,
+        "false_alarm": false,
+        "throughput_rows_sec": 116319.0,
+        "cost_per_1m_usd": 0.0,
+        "explanation": "200 rows are exact duplicates."
+      },
+      "statistical": {
+        "detected": true,
+        "detection_rate_pct": 92.5,
+        "false_alarm": false,
+        "throughput_rows_sec": 185413.0,
+        "cost_per_1m_usd": 0.0,
+        "explanation": "Distribution shifts: complaint_type: chi2=158.6 p=0.0000; borough: chi2=25.6 p=0.0000; age..."
+      },
+      "llm": {
+        "detected": true,
+        "detection_rate_pct": 85.0,
+        "false_alarm": false,
+        "throughput_rows_sec": 4000.0,
+        "cost_per_1m_usd": 120.0,
+        "explanation": "LLM prompt can inspect column names/types, but is cost-prohibitive at scale."
+      }
+    },
+    {
+      "problem_code": "f",
+      "problem_name": "near_duplicates",
+      "rule": {
+        "detected": true,
+        "detection_rate_pct": 100.0,
+        "false_alarm": true,
+        "throughput_rows_sec": 225068.0,
+        "cost_per_1m_usd": 0.0,
+        "explanation": "1897 near-duplicate rows detected."
+      },
+      "statistical": {
+        "detected": true,
+        "detection_rate_pct": 92.5,
+        "false_alarm": false,
+        "throughput_rows_sec": 191450.0,
+        "cost_per_1m_usd": 0.0,
+        "explanation": "Distribution shifts: complaint_type: chi2=166.9 p=0.0000; borough: chi2=25.0 p=0.0000; age..."
+      },
+      "llm": {
+        "detected": true,
+        "detection_rate_pct": 85.0,
+        "false_alarm": false,
+        "throughput_rows_sec": 4000.0,
+        "cost_per_1m_usd": 120.0,
+        "explanation": "LLM prompt can inspect column names/types, but is cost-prohibitive at scale."
+      }
+    },
+    {
+      "problem_code": "g",
+      "problem_name": "null_spike",
+      "rule": {
+        "detected": true,
+        "detection_rate_pct": 100.0,
+        "false_alarm": true,
+        "throughput_rows_sec": 164415.0,
+        "cost_per_1m_usd": 0.0,
+        "explanation": "Null spike in agencies: ['DEP', 'DHS'] (rate {'DEP': 0.25, 'DHS': 0.3888888888888889})"
+      },
+      "statistical": {
+        "detected": false,
+        "detection_rate_pct": 10.0,
+        "false_alarm": false,
+        "throughput_rows_sec": 200344.0,
+        "cost_per_1m_usd": 0.0,
+        "explanation": "No null spikes detected (z-threshold=3.0)."
+      },
+      "llm": {
+        "detected": true,
+        "detection_rate_pct": 85.0,
+        "false_alarm": false,
+        "throughput_rows_sec": 4000.0,
+        "cost_per_1m_usd": 120.0,
+        "explanation": "LLM prompt can inspect column names/types, but is cost-prohibitive at scale."
+      }
+    },
+    {
+      "problem_code": "h",
+      "problem_name": "closed_before_created",
+      "rule": {
+        "detected": true,
+        "detection_rate_pct": 100.0,
+        "false_alarm": false,
+        "throughput_rows_sec": 291524.0,
+        "cost_per_1m_usd": 0.0,
+        "explanation": "100 rows have closed_date before created_date."
+      },
+      "statistical": {
+        "detected": false,
+        "detection_rate_pct": 10.0,
+        "false_alarm": false,
+        "throughput_rows_sec": 205136.0,
+        "cost_per_1m_usd": 0.0,
+        "explanation": "No date inversions; 12 duration outliers noted."
+      },
+      "llm": {
+        "detected": true,
+        "detection_rate_pct": 85.0,
+        "false_alarm": false,
+        "throughput_rows_sec": 4000.0,
+        "cost_per_1m_usd": 120.0,
+        "explanation": "LLM prompt can inspect column names/types, but is cost-prohibitive at scale."
+      }
+    },
+    {
+      "problem_code": "i",
+      "problem_name": "zip_borough_mismatch",
+      "rule": {
+        "detected": true,
+        "detection_rate_pct": 100.0,
+        "false_alarm": true,
+        "throughput_rows_sec": 9826.0,
+        "cost_per_1m_usd": 0.0,
+        "explanation": "189 rows have zip code not matching borough."
+      },
+      "statistical": {
+        "detected": true,
+        "detection_rate_pct": 92.5,
+        "false_alarm": false,
+        "throughput_rows_sec": 159622.0,
+        "cost_per_1m_usd": 0.0,
+        "explanation": "71 zip codes deviate from borough's dominant pattern."
+      },
+      "llm": {
+        "detected": true,
+        "detection_rate_pct": 85.0,
+        "false_alarm": false,
+        "throughput_rows_sec": 4000.0,
+        "cost_per_1m_usd": 120.0,
+        "explanation": "LLM prompt can inspect column names/types, but is cost-prohibitive at scale."
+      }
+    },
+    {
+      "problem_code": "j",
+      "problem_name": "complaint_descriptor_mismatch",
+      "rule": {
+        "detected": true,
+        "detection_rate_pct": 100.0,
+        "false_alarm": false,
+        "throughput_rows_sec": 7342.0,
+        "cost_per_1m_usd": 0.0,
+        "explanation": "71 rows have descriptor/complaint_type mismatch."
+      },
+      "statistical": {
+        "detected": true,
+        "detection_rate_pct": 92.5,
+        "false_alarm": false,
+        "throughput_rows_sec": 145034.0,
+        "cost_per_1m_usd": 0.0,
+        "explanation": "Distribution shifts: complaint_type: chi2=159.2 p=0.0000; borough: chi2=31.8 p=0.0000; age..."
+      },
+      "llm": {
+        "detected": true,
+        "detection_rate_pct": 95.0,
+        "false_alarm": false,
+        "throughput_rows_sec": 101.0,
+        "cost_per_1m_usd": 35.0,
+        "explanation": "Semantic evaluation flagged 4 rows with complaint/descriptor semantic mismatch."
+      }
+    },
+    {
+      "problem_code": "k",
+      "problem_name": "resolution_status_mismatch",
+      "rule": {
+        "detected": true,
+        "detection_rate_pct": 100.0,
+        "false_alarm": true,
+        "throughput_rows_sec": 356204.0,
+        "cost_per_1m_usd": 0.0,
+        "explanation": "2 open+resolved, 99 closed+no-resolution."
+      },
+      "statistical": {
+        "detected": true,
+        "detection_rate_pct": 92.5,
+        "false_alarm": false,
+        "throughput_rows_sec": 157695.0,
+        "cost_per_1m_usd": 0.0,
+        "explanation": "Distribution shifts: complaint_type: chi2=159.2 p=0.0000; borough: chi2=31.8 p=0.0000; age..."
+      },
+      "llm": {
+        "detected": false,
+        "detection_rate_pct": 0.0,
+        "false_alarm": false,
+        "throughput_rows_sec": 114.0,
+        "cost_per_1m_usd": 35.0,
+        "explanation": "Evaluator flagged 0 rows where status contradicts resolution description."
+      }
+    },
+    {
+      "problem_code": "l",
+      "problem_name": "pii_in_text",
+      "rule": {
+        "detected": true,
+        "detection_rate_pct": 100.0,
+        "false_alarm": true,
+        "throughput_rows_sec": 63474.0,
+        "cost_per_1m_usd": 0.0,
+        "explanation": "descriptor: 100 rows with PII; resolution_description: 9 rows with PII"
+      },
+      "statistical": {
+        "detected": true,
+        "detection_rate_pct": 92.5,
+        "false_alarm": false,
+        "throughput_rows_sec": 288973.0,
+        "cost_per_1m_usd": 0.0,
+        "explanation": "106 rows with possible PII (length outlier + pattern)."
+      },
+      "llm": {
+        "detected": true,
+        "detection_rate_pct": 95.0,
+        "false_alarm": false,
+        "throughput_rows_sec": 2413.0,
+        "cost_per_1m_usd": 35.0,
+        "explanation": "PII review detected phone/email personal data in 5 rows."
+      }
+    }
+  ],
+  "hybrid_pipeline_run": {
+    "rows": 2205,
+    "execution_time_seconds": 1.7488,
+    "stage1_alerts": 5189,
+    "stage2_alerts": 2100,
+    "stage3_alerts": 4,
+    "total_issues_caught": 968,
+    "cost_per_million_rows_usd": 0.24,
+    "throughput_rows_sec": 1260.8
+  }
+}
