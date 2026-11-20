@@ -1,0 +1,41 @@
+{
+  "benchmark_timestamp": "2026-11-20 23:09:06",
+  "total_test_cases": 222,
+  "results": {
+    "Hand-coded rules": {
+      "accuracy_pct": 100.0,
+      "accuracy_old_regime_pct": 100.0,
+      "accuracy_new_regime_pct": 100.0,
+      "deterministic_10x": true,
+      "avg_latency_ms": 0.052,
+      "cost_per_1000_requests_usd": 0.0,
+      "auditable": "Yes (100% statutory clause trace)"
+    },
+    "LLM-compiled rules": {
+      "accuracy_pct": 100.0,
+      "accuracy_old_regime_pct": 100.0,
+      "accuracy_new_regime_pct": 100.0,
+      "deterministic_10x": true,
+      "avg_latency_ms": 0.035,
+      "cost_per_1000_requests_usd": 0.0,
+      "auditable": "Yes (100% statutory clause trace)"
+    },
+    "LLM at query time": {
+      "accuracy_pct": 100.0,
+      "accuracy_old_regime_pct": 100.0,
+      "accuracy_new_regime_pct": 100.0,
+      "deterministic_10x": true,
+      "avg_latency_ms": 8784.927,
+      "cost_per_1000_requests_usd": 0.12,
+      "auditable": "Partial (Black-box reasoning chain)"
+    }
+  },
+  "task_5_law_change_report": {
+    "engine": "HandCodedTaxEngineFY2526",
+    "adaptation_time_minutes": 25,
+    "what_broke": "New regime slabs expanded from 6 to 7 tiers; 87A rebate ceiling jumped from 7L to 12L",
+    "silent_failures_caught": "Slab boundary shift from 3L to 4L would silently under-tax if old constants retained",
+    "fy26_verification": "2/5 verified",
+    "avg_latency_ms": 0.057
+  }
+}
